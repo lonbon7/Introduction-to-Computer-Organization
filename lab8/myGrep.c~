@@ -1,0 +1,73 @@
+/* Lonnie Bissmeyer
+ * CSC 225 Lab8
+ * 3/8/13
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "myGrep.h"
+
+#define MAX 100
+
+int main(int argc, char *argv[])
+{
+   FILE *file;
+
+   if(argc != 3)
+   {
+      printf("myGrep: improper number of arguments\n");
+      printf("Usage: ./a.out <filename> <word>\n");
+      
+      return 1;
+   }
+   
+   printf("%s %s %s\n", argv[0], argv[1], argv[2]);     
+   
+   openFile(file);
+
+   return 0;
+}
+
+void openFile(FILE *file)
+{  
+   char *str, *largest, *result;   
+   int line_count = 0, numChar, i;
+   
+   str = (char *)malloc(MAX * sizeof(char*));
+   largest = (char *)malloc(MAX * sizeof(char*));
+  
+   file = fopen("BigJim.txt", "r");
+   
+   while((result = fgets(str, MAX, file)) != NULL)
+   {
+      for(i = 0; i < MAX; i++)
+      {
+         if(str[i] == '\n')
+         {
+            str[i] = '\0';
+            break;
+         }
+      }      
+      
+      if(line_count == 0)
+      {          
+         strcpy(largest, str);         
+      }      
+      
+      if(strlen(str) > strlen(largest))
+      {        
+         strcpy(largest, str);         
+      }
+      
+      line_count++;
+   }
+
+   numChar = strlen(largest);
+   
+   printf("longest line: %s\n", largest);
+   printf("num chars: %d\n", numChar);
+   printf("num lines: %d\n", line_count);
+}  
+   
+   

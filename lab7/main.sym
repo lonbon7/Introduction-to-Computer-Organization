@@ -1,0 +1,12 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	ASCII                   3040
+//	CHAR_COUNT              307F
+//	EXIT_SCAN               3010
+//	OCCURS                  306D
+//	PROMPT1                 3041
+//	PROMPT2                 3050
+//	SCAN                    3009
+//	STACK                   302B
+//	TIMES                   3076
+//	WORD                    302C

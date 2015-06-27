@@ -1,0 +1,12 @@
+/* Lonnie Bissmeyer
+ * CSC 225
+ * Driver for lab 6 program
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+   return 0;
+}
